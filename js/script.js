@@ -75,6 +75,7 @@ const popupOpenButtons = document.querySelectorAll('.popup-open');
 const popup = document.querySelector('.popup');
 const popupClose = document.querySelector('.popup__close');
 const popupInner = document.querySelector('.popup__inner');
+const headerPopupBtn = document.querySelector('.header__btn.btn.popup-open');
 popupOpenButtons.forEach(button => {
     button.addEventListener('click', () => {
         popup.classList.add('show');
@@ -88,7 +89,11 @@ popup.addEventListener('click', (e) => {
         popup.classList.remove('show');
     }
 });
-
+headerPopupBtn.addEventListener('click', function() {
+    if (headerMenu.classList.contains('active')) {
+        headerMenu.classList.remove('active');
+    }
+});
 
 
 const morePopupOpenButtons = document.querySelectorAll('.more-open');
